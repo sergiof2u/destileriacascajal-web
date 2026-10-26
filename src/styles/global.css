@@ -461,82 +461,13 @@ p {
   }
 }
 
-.fotos-proceso {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  max-width: 760px;
-  margin: 48px auto 0;
-}
-
-.fotos-proceso figure {
-  margin: 0;
-  background: var(--crema);
+/* Foto de las botellas, en pedidos */
+.foto-botellas {
+  max-width: 560px;
+  margin: 26px auto 0;
   border: 2px solid var(--tinta);
-  border-radius: 160px 160px 6px 6px;
+  border-radius: 6px;
   overflow: hidden;
-}
-
-.fotos-proceso img {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-}
-
-.fotos-proceso figcaption {
-  padding: 10px 12px 8px;
-  text-align: center;
-  font-size: 0.95rem;
-  border-top: 2px solid var(--tinta);
-}
-
-@media (max-width: 480px) {
-  .fotos-proceso {
-    gap: 12px;
-  }
-  .fotos-proceso figcaption {
-    font-size: 0.8rem;
-  }
-}
-
-/* Franja del lugar */
-.franja-lugar {
-  position: relative;
-  margin: 0;
-  border-top: 2px solid var(--tinta);
-}
-
-.franja-lugar img {
-  width: 100%;
-  height: clamp(260px, 48vw, 560px);
-  object-fit: cover;
-}
-
-.franja-lugar figcaption {
-  position: absolute;
-  left: 50%;
-  bottom: 28px;
-  transform: translateX(-50%);
-  background: var(--crema);
-  border: 2px solid var(--tinta);
-  border-radius: 999px;
-  padding: 12px 28px 8px;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.franja-lugar .sobretitulo {
-  display: block;
-  margin: 0;
-  font-size: 0.72rem;
-}
-
-.franja-altura {
-  display: block;
-  font-family: var(--titulo);
-  font-size: 2rem;
-  letter-spacing: 0.1em;
-  line-height: 1.1;
 }
 
 /* Perfil sensorial */
