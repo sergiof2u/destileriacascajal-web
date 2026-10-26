@@ -461,15 +461,6 @@ p {
   }
 }
 
-/* Foto de las botellas, en pedidos */
-.foto-botellas {
-  max-width: 560px;
-  margin: 26px auto 0;
-  border: 2px solid var(--tinta);
-  border-radius: 6px;
-  overflow: hidden;
-}
-
 /* Perfil sensorial */
 .perfil {
   display: grid;
