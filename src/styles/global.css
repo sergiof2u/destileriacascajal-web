@@ -274,8 +274,15 @@ p {
   margin-bottom: 18px;
 }
 
+/* El nombre mide ~5,3 veces su tamaño de letra: se calcula sobre el ancho
+   del arco (cqi) para que nunca se salga de la etiqueta. */
+.portada .arco,
+.producto-arte .arco {
+  container-type: inline-size;
+}
+
 .portada h1 {
-  font-size: clamp(2.6rem, 12vw, 6.6rem);
+  font-size: min(6.2rem, 17cqi);
   letter-spacing: 0.14em;
   margin-right: -0.14em;
 }
@@ -283,10 +290,6 @@ p {
 @media (max-width: 520px) {
   .portada .arco {
     padding: 52px 20px 32px;
-  }
-  .portada h1 {
-    letter-spacing: 0.08em;
-    margin-right: -0.08em;
   }
 }
 
@@ -404,7 +407,7 @@ p {
 
 .producto-arte .nombre {
   font-family: var(--titulo);
-  font-size: clamp(2.4rem, 6vw, 3.3rem);
+  font-size: min(3.3rem, 17cqi);
   letter-spacing: 0.12em;
   margin: 6px 0 12px;
 }
@@ -561,16 +564,6 @@ p {
   margin-bottom: 12px;
 }
 
-.sello {
-  display: inline-block;
-  background: var(--coral);
-  border: 2px solid var(--tinta);
-  border-radius: 999px;
-  padding: 10px 22px 7px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  margin-top: 36px;
-}
 
 @media (max-width: 860px) {
   .tomarlo {

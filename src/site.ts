@@ -26,7 +26,7 @@ export const resplandor = {
   denominacion: 'Licor artesanal de caña',
   graduacion: '30 – 35 % vol',
   medidas: ['750 ml', '375 ml'],
-  materiaPrima: 'Caña de azúcar',
+  materiaPrima: 'Caña de azúcar de la provincia de Gualivá',
   reposo: 'Con astillas de roble',
 } as const;
 

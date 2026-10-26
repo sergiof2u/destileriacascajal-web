@@ -19,10 +19,11 @@ La destilería es un proyecto aparte de SUMA: contabilidad, marca y comunicació
   denominación principal.
 - **Graduación: entre 30 y 35 % vol.** La de cada lote va en su etiqueta.
 - **Reposado con astillas de roble.** Nada de *añejo*, *añejamiento* ni barril.
-- **Materia prima: caña de azúcar.** Sin hablar de panela, miel virgen ni melaza.
+- **Materia prima: caña de azúcar de la provincia de Gualivá.** Sin hablar de panela, miel virgen ni melaza.
+- **Nada de cerveza**: ni comparaciones ni maridajes con cerveza.
 - **Nada medicinal** ni alegaciones de salud.
 - **Limoncello: 25 % vol**, en 375 ml.
-- **El equipo** se describe como es: caldera de acero inoxidable de 160 L a gas, columna de casi tres metros con
+- **El equipo** se describe como es: caldera de acero inoxidable de 160 L a gas, columna de cerca de metro y medio con
   vidrio, dos platos de burbuja de cobre y deflegmador. Nunca «alambique de cobre».
 
 Los hechos que se repiten viven en `src/site.ts`. Si cambian, se cambian ahí.
