@@ -1,0 +1,226 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, resplandor, limoncello, whatsappUrl } from '../site';
+
+const pedido = whatsappUrl('Hola, quiero hacer un pedido.');
+---
+
+<Base>
+  <!-- Portada: el arco de la etiqueta sobre el fondo de hojas -->
+  <section class="portada fondo-hojas">
+    <div class="container">
+      <div class="arco">
+        <p class="portada-curva">{resplandor.denominacion}</p>
+        <h1>{site.marca}</h1>
+        <hr class="puntos" />
+        <div class="portada-datos">
+          <span>750 ML</span>
+          <span aria-hidden="true">✦</span>
+          <span>30–35 % VOL</span>
+        </div>
+        <hr class="puntos" />
+        <img class="portada-cabeza" src="/marca/cabeza.webp" width="700" height="858" alt="Ilustración de la etiqueta: una cabeza de la que brotan hojas y plantas" />
+        <p class="portada-texto">
+          Micro lotes destilados a mano en {site.lugar.split(',')[0]}, a {site.altura}, y reposados con astillas de roble.
+        </p>
+        <div class="portada-botones">
+          <a class="btn btn-tinta" href="#resplandor">Conoce Resplandor</a>
+          <a class="btn btn-linea" href={pedido} rel="noopener">Haz un pedido</a>
+        </div>
+        <hr class="puntos" />
+        <p class="maquina" style="margin: 14px 0 0">Producido en Subachoque</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resplandor -->
+  <section class="seccion seccion-crema" id="resplandor">
+    <div class="container">
+      <div class="dos-columnas">
+        <div class="producto-arte fondo-hojas">
+          <div class="arco">
+            <p class="sobretitulo">{resplandor.denominacion}</p>
+            <p class="nombre">{site.marca}</p>
+            <hr class="puntos" />
+            <img src="/marca/cabeza.webp" width="200" alt="" />
+          </div>
+        </div>
+        <div>
+          <p class="sobretitulo">{resplandor.denominacion}</p>
+          <h2 class="titulo-seccion">{site.marca}</h2>
+          <p class="lead" style="margin-top: 20px">
+            Un licor de caña hecho sin prisa, en micro lotes, en una pequeña destilería de Subachoque.
+          </p>
+          <p>
+            La caña de azúcar fermenta despacio, con el frío de la montaña marcando el ritmo. Después se destila
+            con cortes hechos a mano, para quedarse solo con el corazón, y reposa con astillas de roble que
+            redondean el sabor y le conservan la frescura.
+          </p>
+          <p>Es un ron joven de los Andes, para tomar solo, en copita, o como base de un coctel.</p>
+          <ul class="ficha">
+            <li><span>Materia prima</span><span>{resplandor.materiaPrima}</span></li>
+            <li><span>Reposo</span><span>{resplandor.reposo}</span></li>
+            <li><span>Graduación</span><span>Entre 30 y 35 % vol. La de cada lote va en su etiqueta</span></li>
+            <li><span>Presentaciones</span><span>{resplandor.medidas.join(' y ')}</span></li>
+            <li><span>Origen</span><span>{site.lugar}</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="perfil">
+        <div>
+          <h3>Nariz</h3>
+          <p>Miel fresca, flor de caña y un toque de caramelo y chocolate, con la madera tostada del roble.</p>
+        </div>
+        <div>
+          <h3>Boca</h3>
+          <p>Entrada redonda y sedosa. Caramelo claro, frutas maduras y un eco herbal de clima frío.</p>
+        </div>
+        <div>
+          <h3>Final</h3>
+          <p>Medio largo, con una dulzura natural y un leve toque especiado que invita al siguiente sorbo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Limoncello -->
+  <section class="seccion seccion-limon" id="limoncello">
+    <div class="container">
+      <div class="dos-columnas">
+        <div>
+          <p class="sobretitulo">Para después de comer</p>
+          <h2 class="titulo-seccion">Limoncello</h2>
+          <p class="lead" style="margin-top: 20px">
+            Cáscara de limón macerada en el alcohol de la destilería y endulzada con almíbar.
+          </p>
+          <p>
+            Fresco, cítrico y suave. Se sirve muy frío, en copita, al final de la comida, y es la segunda
+            botella de la casa.
+          </p>
+          <ul class="ficha">
+            <li><span>Tipo</span><span>{limoncello.denominacion}</span></li>
+            <li><span>Graduación</span><span>{limoncello.graduacion}</span></li>
+            <li><span>Presentación</span><span>{limoncello.medidas.join(' y ')}</span></li>
+            <li><span>Cómo servirlo</span><span>Muy frío</span></li>
+          </ul>
+        </div>
+        <div class="producto-arte arte-limon">
+          <div class="arco">
+            <p class="sobretitulo">Licor artesanal</p>
+            <p class="nombre">Limoncello</p>
+            <hr class="puntos" />
+            <img src="/marca/limon.webp" width="230" alt="Ilustración de un limón con su rama" />
+            <p class="sobretitulo" style="margin-top: 22px">{site.nombre}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo se hace -->
+  <section class="seccion fondo-hojas" id="como-se-hace">
+    <div class="container">
+      <div class="arco" style="max-width: 620px; margin: 0 auto; padding: 56px 28px 30px; border-bottom: 2px solid var(--tinta)">
+        <p class="sobretitulo">Del campo a la botella</p>
+        <h2 class="titulo-seccion">Cómo se hace</h2>
+      </div>
+
+      <ol class="pasos">
+        <li>
+          <h3>La caña</h3>
+          <p>Todo empieza en la caña de azúcar. Con ella preparamos el mosto de cada lote.</p>
+        </li>
+        <li>
+          <h3>Fermentación</h3>
+          <p>Fermenta despacio, a {site.altura}. El frío de la montaña modera el ritmo y deja que los aromas se formen sin prisa.</p>
+        </li>
+        <li>
+          <h3>Destilación</h3>
+          <p>Unas doce horas por lote. Los cortes se hacen a mano: cabezas, corazón y colas.</p>
+        </li>
+        <li>
+          <h3>Reposo</h3>
+          <p>El corazón reposa con astillas de roble, que suavizan y suman notas de madera, caramelo y chocolate.</p>
+        </li>
+      </ol>
+
+      <div class="equipo">
+        <h3>El equipo</h3>
+        <p>
+          Destilamos en un equipo de acero inoxidable con una caldera de 160 litros calentada a gas. Sobre ella
+          sube una columna de casi tres metros, con secciones de vidrio, dos platos de burbuja de cobre y un
+          deflegmador. Por el vidrio se ve el vapor subir y condensarse en cada plato; el cobre ayuda a limpiar
+          los aromas indeseados.
+        </p>
+        <p>
+          Cada destilación dura unas doce horas, y los cortes se hacen a mano, oliendo, probando y midiendo.
+          Solo el corazón se convierte en Resplandor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Manifiesto -->
+  <section class="seccion manifiesto" id="manifiesto">
+    <div class="container">
+      <p class="sobretitulo">Manifiesto</p>
+      <div class="manifiesto-texto">
+        <p>Re-significo el licor.<br />Lo abrazo sin culpa.<br />Sé cuándo es suficiente.</p>
+        <p>La alegría, la ternura y la creatividad<br />no vienen del licor: están en mí.</p>
+        <p>Mi cuerpo es altar, no depósito.<br />Lo escucho. Lo respeto.</p>
+        <p>
+          Bebo lento. Solo si el momento es real.<br />Solo si el cuerpo dice sí, sin dudas.<br />Solo si la
+          compañía honra el gesto.
+        </p>
+        <p>Resplandor es arte, ritual y ciencia.<br />No es excusa, es claridad.</p>
+        <p class="manifiesto-pregunta">¿Este momento lo merece?</p>
+        <p>Si no, vuelvo a mí.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo tomarlo -->
+  <section class="seccion seccion-clara" id="tomarlo">
+    <div class="container">
+      <p class="sobretitulo">Cómo tomarlo</p>
+      <h2 class="titulo-seccion">Despacio</h2>
+      <div class="tomarlo">
+        <article>
+          <h3>En copita</h3>
+          <p>Una onza, sola, a temperatura ambiente. O al lado de la cerveza, para acompañarla.</p>
+        </article>
+        <article>
+          <h3>En canelazo</h3>
+          <p>Agua de panela caliente con canela y un chorro de Resplandor. Para las noches frías de la sabana.</p>
+        </article>
+        <article>
+          <h3>En coctel</h3>
+          <p>Como base de cocteles en lugar de un ron blanco: con limón, hielo y un toque de panela.</p>
+        </article>
+      </div>
+      <p class="sello">Una onza es igual a una cerveza, en alcohol</p>
+    </div>
+  </section>
+
+  <!-- Pedidos -->
+  <section class="seccion fondo-hojas pedidos" id="pedidos">
+    <div class="container">
+      <div class="arco">
+        <p class="sobretitulo">Pedidos</p>
+        <h2 class="titulo-seccion">Pide tu botella</h2>
+        <p style="margin-top: 20px">
+          Los pedidos se hacen por WhatsApp. Escríbenos y te contamos qué hay disponible del lote actual.
+        </p>
+        <ul class="pedidos-lista">
+          <li><strong>Resplandor</strong> en botella de 750 o de 375 ml</li>
+          <li><strong>Limoncello</strong> en botella de 375 ml</li>
+          <li><strong>Regalos de fin de año</strong> y pedidos por cantidad para empresas</li>
+          <li><strong>Restaurantes y bares</strong> que quieran un licor de la región</li>
+        </ul>
+        <a class="btn btn-tinta" href={pedido} rel="noopener">Escribir por WhatsApp</a>
+        <p class="maquina" style="margin: 26px 0 0">{site.whatsappVisible}</p>
+      </div>
+    </div>
+  </section>
+</Base>

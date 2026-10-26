@@ -1,0 +1,128 @@
+---
+import '../styles/global.css';
+import { site, nav, leyendas, whatsappUrl } from '../site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const fullTitle = title ? `${title} — ${site.nombre}` : `${site.marca} — ${site.nombre}`;
+const metaDesc = description ?? site.descripcion;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/favicon-180.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#6EAE89" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={metaDesc} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={metaDesc} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:image" content={new URL('/favicon-512.png', Astro.site)} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime&family=Josefin+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Verificación de edad: obligatoria en sitios de licor. -->
+    <div class="edad" id="edad" role="dialog" aria-modal="true" aria-labelledby="edad-titulo" hidden>
+      <div class="edad-arco">
+        <img src="/marca/cabeza.webp" width="160" alt="" />
+        <p class="edad-titulo" id="edad-titulo">¿Eres mayor de 18 años?</p>
+        <p class="edad-texto">Para entrar a este sitio tienes que tener la edad legal para tomar alcohol en Colombia.</p>
+        <div class="edad-botones">
+          <button class="btn btn-tinta" id="edad-si">Sí, soy mayor de edad</button>
+          <button class="btn btn-linea" id="edad-no">No</button>
+        </div>
+        <p class="edad-nota" id="edad-nota" hidden>Vuelve cuando tengas 18 años.</p>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#inicio">
+          <span class="brand-marca">{site.marca}</span>
+          <span class="brand-casa">{site.nombre}</span>
+        </a>
+        <nav aria-label="Secciones">
+          <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">Menú</button>
+          <ul class="nav-list" id="nav-list">
+            {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+          </ul>
+        </nav>
+        <a class="btn btn-tinta header-cta" href={whatsappUrl('Hola, quiero hacer un pedido de Resplandor.')} rel="noopener">Pedir</a>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <img class="footer-cabeza" src="/marca/cabeza.webp" width="90" alt="" />
+        <p class="footer-marca">{site.nombre}</p>
+        <p class="maquina">Producido en Subachoque</p>
+        <p class="footer-contacto">
+          Pedidos por WhatsApp: <a href={whatsappUrl()} rel="noopener">{site.whatsappVisible}</a>
+        </p>
+        <div class="footer-leyendas">
+          {leyendas.map((l) => <p>{l}</p>)}
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Menú en pantallas pequeñas.
+      const toggle = document.getElementById('nav-toggle');
+      const list = document.getElementById('nav-list');
+      toggle?.addEventListener('click', () => {
+        const abierto = list?.classList.toggle('abierto');
+        toggle.setAttribute('aria-expanded', String(Boolean(abierto)));
+      });
+      list?.querySelectorAll('a').forEach((a) =>
+        a.addEventListener('click', () => {
+          list.classList.remove('abierto');
+          toggle?.setAttribute('aria-expanded', 'false');
+        }),
+      );
+
+      // Verificación de edad. Se recuerda en el navegador; si el navegador no
+      // deja guardar, se vuelve a preguntar en la próxima visita.
+      const CLAVE = 'cascajal-edad';
+      const edad = document.getElementById('edad');
+      let confirmada = false;
+      try {
+        confirmada = localStorage.getItem(CLAVE) === 'si';
+      } catch {}
+      if (!confirmada && edad) {
+        edad.hidden = false;
+        document.body.classList.add('bloqueado');
+      }
+      document.getElementById('edad-si')?.addEventListener('click', () => {
+        try {
+          localStorage.setItem(CLAVE, 'si');
+        } catch {}
+        if (edad) edad.hidden = true;
+        document.body.classList.remove('bloqueado');
+      });
+      document.getElementById('edad-no')?.addEventListener('click', () => {
+        const nota = document.getElementById('edad-nota');
+        if (nota) nota.hidden = false;
+      });
+    </script>
+  </body>
+</html>

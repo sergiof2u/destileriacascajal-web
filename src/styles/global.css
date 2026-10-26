@@ -1,0 +1,696 @@
+/* Identidad tomada de la etiqueta verde de Resplandor y la del limoncello. */
+:root {
+  --verde: #6eae89;
+  --verde-oscuro: #4f8a69;
+  --crema: #edebd6;
+  --crema-claro: #f5f3e3;
+  --tinta: #1a1e18;
+  --tinta-suave: #3d4339;
+  --limon: #ecd36a;
+  --mostaza: #e5b958;
+  --coral: #f08b6d;
+
+  --titulo: 'Bebas Neue', 'Oswald', Impact, sans-serif;
+  --texto: 'Josefin Sans', 'Futura', 'Trebuchet MS', sans-serif;
+  --maquina: 'Courier Prime', 'Courier New', monospace;
+
+  --ancho: 1120px;
+  --puntos: radial-gradient(circle, var(--tinta) 1.4px, transparent 1.6px) 0 50% / 9px 4px repeat-x;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+}
+
+body {
+  margin: 0;
+  background: var(--crema);
+  color: var(--tinta);
+  font-family: var(--texto);
+  font-weight: 400;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.bloqueado {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--titulo);
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.maquina {
+  font-family: var(--maquina);
+}
+
+/* Líneas punteadas, como en la etiqueta. */
+.puntos {
+  height: 4px;
+  background: var(--puntos);
+  border: 0;
+  margin: 0;
+}
+
+.sobretitulo {
+  font-family: var(--texto);
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  margin: 0 0 14px;
+}
+
+.titulo-seccion {
+  font-size: clamp(2.8rem, 7vw, 4.6rem);
+  letter-spacing: 0.08em;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  font-family: var(--texto);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 26px 11px;
+  border-radius: 999px;
+  border: 2px solid var(--tinta);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-tinta {
+  background: var(--tinta);
+  color: var(--crema);
+}
+
+.btn-linea {
+  background: transparent;
+  color: var(--tinta);
+}
+
+.btn-coral {
+  background: var(--coral);
+  color: var(--tinta);
+}
+
+/* Encabezado */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--crema);
+  border-bottom: 2px solid var(--tinta);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 66px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1;
+  margin-right: auto;
+}
+
+.brand-marca {
+  font-family: var(--titulo);
+  font-size: 1.7rem;
+  letter-spacing: 0.22em;
+}
+
+.brand-casa {
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.nav-list {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.nav-list a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  padding: 7px 16px 5px;
+  font: 600 0.8rem var(--texto);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.header-cta {
+  padding: 10px 20px 8px;
+}
+
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: block;
+  }
+  .nav-list {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 66px;
+    flex-direction: column;
+    gap: 0;
+    background: var(--crema);
+    border-bottom: 2px solid var(--tinta);
+    padding: 8px 20px 16px;
+  }
+  .nav-list.abierto {
+    display: flex;
+  }
+  .nav-list a {
+    display: block;
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-cta {
+    display: none;
+  }
+}
+
+/* Fondo verde con hojas, como la etiqueta */
+.fondo-hojas {
+  background-color: var(--verde);
+  background-image: url('/marca/hojas.webp');
+  background-size: 620px auto;
+  background-repeat: repeat;
+}
+
+/* El arco crema, forma central de la marca */
+.arco {
+  background: var(--crema);
+  border: 2px solid var(--tinta);
+  border-radius: 999px 999px 0 0 / 360px 360px 0 0;
+  text-align: center;
+}
+
+/* Portada */
+.portada {
+  padding: 56px 0 0;
+}
+
+.portada .arco {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 64px 36px 40px;
+  border-bottom: 0;
+}
+
+.portada-curva {
+  font-size: 0.9rem;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.portada h1 {
+  font-size: clamp(2.6rem, 12vw, 6.6rem);
+  letter-spacing: 0.14em;
+  margin-right: -0.14em;
+}
+
+@media (max-width: 520px) {
+  .portada .arco {
+    padding: 52px 20px 32px;
+  }
+  .portada h1 {
+    letter-spacing: 0.08em;
+    margin-right: -0.08em;
+  }
+}
+
+.portada-datos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  padding: 12px 4px 8px;
+}
+
+.portada-datos span:nth-child(2) {
+  font-size: 1.2rem;
+}
+
+.portada-cabeza {
+  width: min(300px, 70%);
+  margin: 26px auto 18px;
+}
+
+.portada-texto {
+  max-width: 400px;
+  margin: 0 auto 26px;
+  color: var(--tinta-suave);
+}
+
+.portada-botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+/* Secciones */
+.seccion {
+  padding: 96px 0;
+}
+
+.seccion-crema {
+  background: var(--crema);
+}
+
+.seccion-clara {
+  background: var(--crema-claro);
+}
+
+.dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .dos-columnas {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .seccion {
+    padding: 72px 0;
+  }
+}
+
+.lead {
+  font-size: 1.22rem;
+  line-height: 1.55;
+}
+
+/* Ficha del producto, con las líneas punteadas */
+.ficha {
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ficha li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0 9px;
+  background: var(--puntos);
+  background-position: 0 100%;
+}
+
+.ficha li span:first-child {
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.ficha li span:last-child {
+  text-align: right;
+}
+
+/* Tarjeta del producto: arco sobre fondo de color */
+.producto-arte {
+  padding: 48px 32px;
+  border: 2px solid var(--tinta);
+  border-radius: 6px;
+}
+
+.producto-arte .arco {
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 48px 28px 32px;
+}
+
+.producto-arte .arco img {
+  margin: 18px auto 0;
+}
+
+.producto-arte .nombre {
+  font-family: var(--titulo);
+  font-size: clamp(2.4rem, 6vw, 3.3rem);
+  letter-spacing: 0.12em;
+  margin: 6px 0 12px;
+}
+
+.arte-limon {
+  background-color: var(--limon);
+}
+
+/* Perfil sensorial */
+.perfil {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.perfil div {
+  border-top: 2px solid var(--tinta);
+  padding-top: 18px;
+}
+
+.perfil h3 {
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 760px) {
+  .perfil {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Limoncello */
+.seccion-limon {
+  background: var(--limon);
+}
+
+/* Cómo se hace */
+.pasos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin: 48px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: paso;
+}
+
+.pasos li {
+  background: var(--crema);
+  border: 2px solid var(--tinta);
+  border-radius: 160px 160px 6px 6px;
+  padding: 44px 22px 26px;
+  text-align: center;
+  counter-increment: paso;
+}
+
+.pasos li::before {
+  content: counter(paso, decimal-leading-zero);
+  display: block;
+  font-family: var(--maquina);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.pasos h3 {
+  font-size: 1.9rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.pasos p {
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .pasos {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .pasos {
+    grid-template-columns: 1fr;
+  }
+}
+
+.equipo {
+  max-width: 760px;
+  margin: 64px auto 0;
+  background: var(--crema);
+  border: 2px solid var(--tinta);
+  border-radius: 6px;
+  padding: 36px 36px 22px;
+}
+
+.equipo h3 {
+  font-size: 2.2rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+/* Manifiesto */
+.manifiesto {
+  background: var(--tinta);
+  color: var(--crema);
+  text-align: center;
+}
+
+.manifiesto .sobretitulo {
+  color: var(--verde);
+}
+
+.manifiesto-texto {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.manifiesto-texto p {
+  margin-bottom: 1.4em;
+}
+
+.manifiesto-pregunta {
+  font-family: var(--titulo);
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  letter-spacing: 0.06em;
+  color: var(--limon);
+  margin: 0.4em 0 0.2em;
+}
+
+/* Cómo tomarlo */
+.tomarlo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 44px;
+}
+
+.tomarlo article {
+  border: 2px solid var(--tinta);
+  border-radius: 6px;
+  padding: 30px 26px 18px;
+  background: var(--crema-claro);
+}
+
+.tomarlo h3 {
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.sello {
+  display: inline-block;
+  background: var(--coral);
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  padding: 10px 22px 7px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-top: 36px;
+}
+
+@media (max-width: 860px) {
+  .tomarlo {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Pedidos */
+.pedidos .arco {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px 36px 48px;
+}
+
+.pedidos-lista {
+  text-align: left;
+  max-width: 480px;
+  margin: 28px auto 32px;
+  padding: 0;
+  list-style: none;
+}
+
+.pedidos-lista li {
+  padding: 12px 0 10px;
+  background: var(--puntos);
+  background-position: 0 100%;
+}
+
+.pedidos-lista strong {
+  font-weight: 600;
+}
+
+/* Pie */
+.site-footer {
+  background: var(--crema);
+  border-top: 2px solid var(--tinta);
+  padding: 56px 0 40px;
+  text-align: center;
+}
+
+.footer-cabeza {
+  margin: 0 auto 14px;
+}
+
+.footer-marca {
+  font-family: var(--titulo);
+  font-size: 1.8rem;
+  letter-spacing: 0.2em;
+  margin: 0;
+}
+
+.footer-contacto {
+  margin-top: 18px;
+}
+
+.footer-leyendas {
+  margin-top: 28px;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.footer-leyendas p {
+  margin: 0 0 4px;
+}
+
+/* Verificación de edad */
+.edad {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background-color: var(--verde);
+  background-image: url('/marca/hojas.webp');
+  background-size: 620px auto;
+}
+
+.edad[hidden] {
+  display: none;
+}
+
+.edad-arco {
+  width: 100%;
+  max-width: 440px;
+  background: var(--crema);
+  border: 2px solid var(--tinta);
+  border-radius: 999px 999px 6px 6px / 260px 260px 6px 6px;
+  padding: 56px 30px 34px;
+  text-align: center;
+}
+
+.edad-arco img {
+  margin: 0 auto 16px;
+}
+
+.edad-titulo {
+  font-family: var(--titulo);
+  font-size: 2.4rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.edad-texto {
+  font-size: 0.98rem;
+  color: var(--tinta-suave);
+}
+
+.edad-botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.edad-nota {
+  margin: 16px 0 0;
+  font-weight: 600;
+}
