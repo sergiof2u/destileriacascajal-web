@@ -293,6 +293,20 @@ p {
   }
 }
 
+/* Lema de la contraetiqueta: «Florecimiento del ser» */
+.lema {
+  font-family: var(--maquina);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 10px 0 14px;
+}
+
+.lema-izq {
+  margin: 12px 0 0;
+  font-size: 1.15rem;
+}
+
 .portada-datos {
   display: flex;
   justify-content: space-between;

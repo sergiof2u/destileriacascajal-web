@@ -6,6 +6,8 @@ export const site = {
   nombre: 'Destilería Cascajal',
   marca: 'Resplandor',
   tagline: 'Licor artesanal de caña, hecho en Subachoque',
+  // Lema de la contraetiqueta 2026.
+  lema: 'Florecimiento del ser',
   descripcion:
     'Destilería Cascajal: Resplandor, licor artesanal de caña reposado con astillas de roble, y limoncello. Micro lotes destilados a mano en Subachoque, Cundinamarca, a 2.700 metros.',
 
