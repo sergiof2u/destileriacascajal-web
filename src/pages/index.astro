@@ -45,6 +45,10 @@ const pedido = whatsappUrl('Hola, quiero hacer un pedido.');
             <hr class="puntos" />
             <img src="/marca/cabeza.webp" width="200" alt="" />
           </div>
+          <p class="nota-arte">
+            La ilustración muestra a un hombre que cierra los ojos y desde su interior abre al mundo sus más
+            profundas estructuras: un jardín abierto al mundo.
+          </p>
         </div>
         <div>
           <p class="sobretitulo">{resplandor.denominacion}</p>
@@ -108,15 +112,9 @@ const pedido = whatsappUrl('Hola, quiero hacer un pedido.');
             <li><span>Cómo servirlo</span><span>Muy frío</span></li>
           </ul>
         </div>
-        <div class="producto-arte arte-limon">
-          <div class="arco">
-            <p class="sobretitulo">Licor artesanal</p>
-            <p class="nombre">Limoncello</p>
-            <hr class="puntos" />
-            <img src="/marca/limon.webp" width="230" alt="Ilustración de un limón con su rama" />
-            <p class="sobretitulo" style="margin-top: 22px">{site.nombre}</p>
-          </div>
-        </div>
+        <figure class="foto-arco">
+          <img src="/fotos/limoncello.webp" width="900" height="1200" loading="lazy" alt="Botella de limoncello de la Destilería Cascajal sobre una mesa de madera, junto a un florero amarillo" />
+        </figure>
       </div>
     </div>
   </section>
@@ -148,6 +146,17 @@ const pedido = whatsappUrl('Hola, quiero hacer un pedido.');
         </li>
       </ol>
 
+      <div class="fotos-proceso">
+        <figure>
+          <img src="/fotos/fermentacion.webp" width="700" height="933" loading="lazy" alt="Mosto de caña fermentando en una damajuana de vidrio con su trampa de aire" />
+          <figcaption class="maquina">Fermentación lenta</figcaption>
+        </figure>
+        <figure>
+          <img src="/fotos/roble.webp" width="700" height="933" loading="lazy" alt="Tres astillas de roble tostado" />
+          <figcaption class="maquina">Astillas de roble para el reposo</figcaption>
+        </figure>
+      </div>
+
       <div class="equipo">
         <h3>El equipo</h3>
         <p>
@@ -163,6 +172,15 @@ const pedido = whatsappUrl('Hola, quiero hacer un pedido.');
       </div>
     </div>
   </section>
+
+  <!-- El lugar -->
+  <figure class="franja-lugar">
+    <img src="/fotos/subachoque.webp" width="1200" height="900" loading="lazy" alt="La sabana de Subachoque con las montañas al fondo y un arcoíris" />
+    <figcaption>
+      <span class="sobretitulo">Subachoque, Cundinamarca</span>
+      <span class="franja-altura">{site.altura}</span>
+    </figcaption>
+  </figure>
 
   <!-- Manifiesto -->
   <section class="seccion manifiesto" id="manifiesto">

@@ -426,8 +426,117 @@ p {
   margin: 6px 0 12px;
 }
 
-.arte-limon {
-  background-color: var(--limon);
+.nota-arte {
+  max-width: 340px;
+  margin: 22px auto 0;
+  padding: 14px 18px 10px;
+  background: var(--crema);
+  border: 2px solid var(--tinta);
+  border-radius: 6px;
+  font-family: var(--maquina);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Fotos recortadas con la forma del arco */
+.foto-arco {
+  margin: 0;
+  border: 2px solid var(--tinta);
+  border-radius: 999px 999px 6px 6px / 260px 260px 6px 6px;
+  overflow: hidden;
+  background: var(--crema);
+}
+
+.foto-arco img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+@media (max-width: 860px) {
+  .foto-arco {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+}
+
+.fotos-proceso {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  max-width: 760px;
+  margin: 48px auto 0;
+}
+
+.fotos-proceso figure {
+  margin: 0;
+  background: var(--crema);
+  border: 2px solid var(--tinta);
+  border-radius: 160px 160px 6px 6px;
+  overflow: hidden;
+}
+
+.fotos-proceso img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.fotos-proceso figcaption {
+  padding: 10px 12px 8px;
+  text-align: center;
+  font-size: 0.95rem;
+  border-top: 2px solid var(--tinta);
+}
+
+@media (max-width: 480px) {
+  .fotos-proceso {
+    gap: 12px;
+  }
+  .fotos-proceso figcaption {
+    font-size: 0.8rem;
+  }
+}
+
+/* Franja del lugar */
+.franja-lugar {
+  position: relative;
+  margin: 0;
+  border-top: 2px solid var(--tinta);
+}
+
+.franja-lugar img {
+  width: 100%;
+  height: clamp(260px, 48vw, 560px);
+  object-fit: cover;
+}
+
+.franja-lugar figcaption {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  background: var(--crema);
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  padding: 12px 28px 8px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.franja-lugar .sobretitulo {
+  display: block;
+  margin: 0;
+  font-size: 0.72rem;
+}
+
+.franja-altura {
+  display: block;
+  font-family: var(--titulo);
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
 }
 
 /* Perfil sensorial */
