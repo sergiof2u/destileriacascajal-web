@@ -39,7 +39,8 @@ Los hechos que se repiten viven en `src/site.ts`. Si cambian, se cambian ahí.
 - **Tuteo** al dirigirse al lector: tienes, quieres, escríbenos. Nunca voseo.
 - **Nada de superlativos** ni promesas infladas. El tono es el del manifiesto: calma, ritual, sin prisa.
 - **No prometer lo que no está confirmado** con Sergio (visitas, catas, envíos, precios).
-- El manifiesto se publica tal como lo escribió Sergio, sin la palabra *medicina*.
+- El manifiesto se publica en la versión que Sergio revisó el 2026-10-28 con el manual de estilo (la misma del
+  vault, en `07 DESTILERÍA CASCAJAL/manifiesto resplandor.md`), sin la palabra *medicina*. No se cambia sin su visto bueno.
 
 ## Identidad visual
 
